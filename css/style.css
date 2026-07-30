@@ -1,0 +1,432 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+}
+
+body{
+    background:#1f1f1f;
+    color:#f3f4f6;
+    padding:40px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.small{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+/* CONTROLES */
+
+.controls{
+
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+
+}
+
+input,
+textarea,
+button{
+
+    border:none;
+    outline:none;
+    border-radius:10px;
+    transition:.25s;
+    font-size:15px;
+
+}
+
+input,
+textarea{
+
+    background:#2d2d31;
+    color:white;
+    padding:12px;
+    border:1px solid #3b3d42;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:#2f80ed;
+    box-shadow:0 0 0 3px rgba(47,128,237,.25);
+
+}
+
+button{
+
+    cursor:pointer;
+    padding:12px 18px;
+    font-weight:600;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.primary{
+
+    background:#2f80ed;
+    color:white;
+
+}
+
+.success{
+
+    background:#16a34a;
+    color:white;
+
+}
+
+.danger{
+
+    background:#dc2626;
+    color:white;
+
+}
+
+/* GRID */
+
+#list{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(390px,1fr));
+    gap:25px;
+
+}
+
+/* CARD FLIP */
+
+.card{
+    perspective:1200px;
+    min-height:620px;
+}
+
+.card-inner{
+
+    position:relative;
+    width:100%;
+    height:100%;
+
+    transition:transform .8s;
+
+    transform-style:preserve-3d;
+
+}
+
+.card.flipped .card-inner{
+
+    transform:rotateY(180deg);
+
+}
+
+.card-front,
+.card-back{
+
+    position:absolute;
+
+    inset:0;
+
+    backface-visibility:hidden;
+
+    background:#2b2d31;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:1px solid #404040;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    max-height: 80%;
+
+}
+
+.card-front{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.card-back{
+
+    transform:rotateY(180deg);
+
+    overflow-y:auto;
+
+}
+
+/* HEADER */
+
+.personHeader{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:15px;
+
+}
+
+.personHeader h2{
+
+    font-size:24px;
+    margin-bottom:8px;
+
+}
+
+.editable{
+
+    cursor:text;
+
+}
+
+/* PROGRESS */
+
+.progress{
+
+    width:100%;
+    height:12px;
+    background:#404040;
+    border-radius:30px;
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+.progress-bar{
+
+    height:100%;
+    transition:.4s;
+
+}
+
+/* CAMPOS */
+
+.form-group{
+
+    margin-top:15px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#bdbdbd;
+
+    font-size:13px;
+
+}
+
+textarea{
+
+    width:100%;
+    resize:none;
+    min-height:90px;
+
+}
+
+.time-row{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.time-row div{
+
+    flex:1;
+
+}
+
+.time-row input{
+
+    width:100%;
+
+}
+
+/* BOTÕES */
+
+.buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.buttons button{
+
+    flex:1;
+
+}
+
+/* HISTÓRICO */
+
+.history-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.history-item{
+
+    background:#35373c;
+
+    border-left:4px solid #2f80ed;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:12px;
+
+}
+
+.history-item:hover{
+
+    background:#3f4248;
+
+}
+
+.history-date{
+
+    color:#9ca3af;
+
+    font-size:12px;
+
+    margin-bottom:6px;
+
+}
+
+.history-hours{
+
+    color:#7dd3fc;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+
+}
+
+.history-description{
+
+    line-height:1.5;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:20px;
+
+}
+
+/* BADGES */
+
+.warning{
+
+    color:#ffb347;
+
+    font-weight:bold;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    #list{
+
+        grid-template-columns:5fr;
+
+    }
+
+    .card{
+
+        height:auto;
+        min-height:650px;
+
+    }
+
+}
+
+.history-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.history-actions button {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.card.dragging {
+    opacity: 0.5;
+    transform: scale(1.03);
+}
